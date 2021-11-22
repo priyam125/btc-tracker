@@ -4,42 +4,7 @@ import Chart from 'react-apexcharts'
 const Chart1 = (props) => {
 
     !props.historicData && <div>Loading</div>
-    let errors
-
-    let priceArray = []
-    // console.log(props);
-    // const [historicData, setHistoricData] = useState({})
-    // const [historicPrices, setHistoricPrices] = useState([])
-    // const [historicDate, setHistoricDate] = useState([])
-    // const [daysChart, setDaysChart] = useState()
-    // useEffect(() => {
-
-    //     if(props.historicData) {
-    //         props.historicData.map((price) => {
-    //             // console.log(price)
-    //             priceArray.push(price[1])  
-    //             historicPrices.push(price[1])
-    //         }
-    //     )
-    //     } else (
-    //       <div>Loading</div>
-    //     )
-
-        
-    // })
-
-    // useEffect(() => {
-    //   if(props.historicData === undefined)
-    //   return (
-    //     <div>Loading</div>
-    //   )
-    //   if(props.historicData) {
-    //     setHistoricData(props.historicData)
-    //     setHistoricPrices(props.historicPrices)
-    //     setHistoricDate(props.historicDate)
-    //     setDaysChart(props.daysChart)
-    //   }
-    // }, [props.historicData])
+    
 
     const chart = {
         options: {
@@ -66,18 +31,10 @@ const Chart1 = (props) => {
               enabled: false,           
              },
             xaxis: {
-              // type: "datetime",
-              // categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
               categories: props.historicDate,
               labels: {
                 show: false
               },
-              // tooltip: {
-              //   x: {
-              //     format: 'dd/MM/yy HH:mm'
-              //   }
-              // },
-              // tickAmount: 10,
               axisBorder: {
                 show: true,
                 color: "#c2bebe"
@@ -119,15 +76,9 @@ const Chart1 = (props) => {
           },
           series: [{
             name: `Bitcoin Prices in past ${props.daysChart} days`,
-            // data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
-            // data: props.historicData.map((data) => data[1]),   
             data: props.historicPrices,
             // type: "line"
           }
-          // , {
-          //   data: props.historicPrices,
-          //   type: "column"
-          // }
 
         ],
 
